@@ -1,0 +1,322 @@
+.shell {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.top-bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.title {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.15rem 0 0;
+  letter-spacing: -0.01em;
+}
+
+.nav {
+  display: flex;
+  gap: 0.25rem;
+  background: var(--paper-raised);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 0.25rem;
+}
+
+.nav button {
+  border: none;
+  background: transparent;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.nav button[aria-current="true"] {
+  background: var(--ink);
+  color: var(--paper-raised);
+}
+
+.card {
+  background: var(--paper-raised);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+
+.card + .card {
+  margin-top: 1.25rem;
+}
+
+/* --- Assessment flow --- */
+
+.session-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.student-line {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.student-line strong {
+  color: var(--ink);
+}
+
+.timer {
+  font-family: var(--mono);
+  font-size: 2.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.timer.is-live {
+  color: var(--teal);
+}
+
+.live-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--teal);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.mode-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.mode-options {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.mode-options button {
+  border: 1px solid var(--hairline);
+  background: var(--paper);
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--ink-soft);
+}
+
+.mode-options button[aria-pressed="true"] {
+  border-color: var(--brick);
+  background: var(--brick-dim);
+  color: var(--brick);
+  font-weight: 600;
+}
+
+.passage {
+  font-family: var(--body);
+  font-size: 1.25rem;
+  line-height: 2.1;
+  letter-spacing: 0.01em;
+}
+
+.word {
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  padding: 0 0.06em;
+  margin: 0 0.02em;
+  border-radius: 3px;
+  position: relative;
+}
+
+.word:hover {
+  background: var(--paper);
+}
+
+.word.tagged {
+  color: var(--brick);
+}
+
+/* the signature mark: a hand-drawn-feeling slash through a miscue,
+   echoing how a teacher annotates a paper running record */
+.word.tagged::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 45%;
+  height: 2px;
+  background: var(--brick);
+  transform: rotate(-8deg);
+  border-radius: 2px;
+}
+
+.word.tagged.type-substitution::after {
+  transform: rotate(8deg);
+}
+
+.word.tagged.type-hesitation {
+  text-decoration: underline dotted;
+  text-decoration-color: var(--amber);
+  text-underline-offset: 4px;
+}
+
+.word.tagged.type-hesitation::after {
+  display: none;
+}
+
+.word.stop-boundary {
+  border-right: 3px solid var(--ink);
+  padding-right: 0.3em;
+}
+
+.helper-banner {
+  margin-top: 1.25rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: var(--teal-dim);
+  color: var(--teal);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper-raised);
+}
+
+.btn-primary:disabled {
+  background: var(--hairline);
+  color: var(--ink-soft);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  border-color: var(--hairline);
+  color: var(--ink);
+}
+
+/* --- Results --- */
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.stat {
+  background: var(--paper);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-value {
+  font-family: var(--mono);
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.2rem;
+}
+
+.tier-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tier-at_benchmark {
+  background: var(--teal-dim);
+  color: var(--teal);
+}
+
+.tier-some_risk {
+  background: var(--amber-dim);
+  color: var(--amber);
+}
+
+.tier-at_risk {
+  background: var(--brick-dim);
+  color: var(--brick);
+}
+
+.recommendation {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.empty-state {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.error-banner {
+  background: var(--brick-dim);
+  color: var(--brick);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}

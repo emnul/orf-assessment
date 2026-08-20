@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap");
+
+:root {
+  /* Color: cool paper (not the cliché warm cream), deep forest ink,
+     teal for "live/on-track", amber for caution, brick for at-risk.
+     Kept desaturated and printable-feeling — a classroom instrument,
+     not a marketing page. */
+  --paper: #eef1ee;
+  --paper-raised: #ffffff;
+  --ink: #16241f;
+  --ink-soft: #4a5852;
+  --hairline: #d3dbd5;
+
+  --teal: #2f6f62;
+  --teal-dim: #e4efec;
+  --amber: #c48a2e;
+  --amber-dim: #f6ecd8;
+  --brick: #b5453b;
+  --brick-dim: #f6e2df;
+
+  --display: "Space Grotesk", system-ui, sans-serif;
+  --body: "Inter", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+button:focus-visible,
+[tabindex]:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

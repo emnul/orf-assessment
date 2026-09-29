@@ -27,7 +27,7 @@ in a day or two, not a reproduction of Amplify's actual (licensed) product.
   S3 + CloudFront (frontend), provisioned with Terraform
 - **Testing:** pytest (scoring engine), Jest (API session logic)
 
-**Architecture tradeoff, documented rather than hidden:**
+**Architecture tradeoff**
 This project uses ECS Fargate instead instead of Lambda Functions, since
 a long-running GraphQL/scoring service maps more naturally onto containers
 than a serverless function-per-request model. Lambda would be a better fit
